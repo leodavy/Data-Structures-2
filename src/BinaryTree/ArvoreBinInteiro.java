@@ -54,6 +54,24 @@ public class ArvoreBinInteiro{
             simetrico(currentNode.getRight());
         }
     }
+    public int higherNumber(NoArvoreBinInteiro currentNode){
+        if(root == null){
+            System.out.println("A lista está vazia");
+            return 0;
+        }
+        int higher = currentNode.getData();
+        int leftHigher = higherNumber(currentNode.getLeft());
+        int rightHigher = higherNumber(currentNode.getRight());
+
+        if(leftHigher > higher){
+            higher = leftHigher;
+        }
+
+        if(rightHigher > higher){
+            higher = rightHigher;
+        }
+        return higher;
+    }
 }
 
 

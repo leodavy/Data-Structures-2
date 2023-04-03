@@ -8,6 +8,7 @@ public class TestArvoreBinInteiro {
         Scanner scanner = new Scanner(System.in);
         int menu;
 
+        ArvoreBinInteiro tree = new ArvoreBinInteiro();
         do {
             System.out.println("""
                     MENU
@@ -26,9 +27,6 @@ public class TestArvoreBinInteiro {
                     0.   Sair""");
 
             menu = scanner.nextInt();
-
-            ArvoreBinInteiro tree = new ArvoreBinInteiro();
-
             switch (menu) {
                 case 1:
                     System.out.println("Digite o número a ser inserido: ");
@@ -36,7 +34,8 @@ public class TestArvoreBinInteiro {
                     tree.inserir(insertedNumber);
                     break;
                 case 2:
-
+                    System.out.println("O maior número é:" );
+                    break;
                 case 3:
 
                 case 4:
@@ -56,7 +55,7 @@ public class TestArvoreBinInteiro {
                 case 11:
 
                 case 12:
-                    System.out.println("Raiz: " + tree.getRoot());
+                    System.out.println("Raiz: " + tree.getRoot().getData());
                 case 0:
                     break;
             }
