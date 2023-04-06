@@ -1,6 +1,6 @@
 package BinaryTree;
 public class ArvoreBinInteiro{
-    private NoArvoreBinInteiro root;
+    public NoArvoreBinInteiro root;
 
     public ArvoreBinInteiro() {
         this.root = null;
@@ -54,24 +54,38 @@ public class ArvoreBinInteiro{
             simetrico(currentNode.getRight());
         }
     }
-    public int higherNumber(NoArvoreBinInteiro currentNode){
-        if(root == null){
-            System.out.println("A lista está vazia");
+
+    public int higherNumber(NoArvoreBinInteiro currentnode) {
+
+        if(isEmpty()){
+            System.out.println("A árvore está vazia.");
             return 0;
         }
-        int higher = currentNode.getData();
-        int leftHigher = higherNumber(currentNode.getLeft());
-        int rightHigher = higherNumber(currentNode.getRight());
+            int higher;
+            int lhigher = higherNumber(currentnode.getLeft());
+            int rhigher = higherNumber(currentnode.getRight());
 
-        if(leftHigher > higher){
-            higher = leftHigher;
-        }
-
-        if(rightHigher > higher){
-            higher = rightHigher;
-        }
-        return higher;
+            higher = Math.max(lhigher, rhigher);
+            return higher;
     }
+
+    public int deepestLevel(NoArvoreBinInteiro currentnode) {
+        if(root == null){
+            System.out.println("A árvore está vazia");
+            return 0;
+        }
+        int lDeep = deepestLevel(currentnode.getLeft());
+        int rDeep = deepestLevel(currentnode.getRight());
+
+        if (lDeep > rDeep) return lDeep + 1;
+        else return  rDeep + 1;
+
+    }
+    public boolean isEmpty (){
+        return root == null;
+    }
+
+
 }
 
 

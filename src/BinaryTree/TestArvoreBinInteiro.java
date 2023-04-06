@@ -34,26 +34,35 @@ public class TestArvoreBinInteiro {
                     tree.inserir(insertedNumber);
                     break;
                 case 2:
-                    System.out.println("O maior número é:" );
+                    System.out.println("O maior número é: " + tree.higherNumber(tree.root) );
                     break;
                 case 3:
-
+                    System.out.println("O menor número é: ");
+                    break;
                 case 4:
-
+                    System.out.println("A altura da árvore é: " + tree.deepestLevel(tree.root));
+                    break;
                 case 5:
-
+                    System.out.println("Lista números em pré-ordem: ");
+                    break;
                 case 6:
-
+                    System.out.println("Lista números em pós-ordem: ");
+                    break;
                 case 7:
-
+                    System.out.println("Lista de números em ordem simpétrica: ");
+                    break;
                 case 8:
-
+                    System.out.println("Lista de números em nível: ");
+                    break;
                 case 9:
-
+                    System.out.println("Lista dos números internos: ");
+                    break;
                 case 10:
-
+                    System.out.println("Lista de folhas da árvore: ");
+                    break;
                 case 11:
-
+                    System.out.println("Caminho até o número: ");
+                    break;
                 case 12:
                     System.out.println("Raiz: " + tree.getRoot().getData());
                 case 0:
