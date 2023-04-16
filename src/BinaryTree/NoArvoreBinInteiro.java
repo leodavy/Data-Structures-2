@@ -1,14 +1,13 @@
 package BinaryTree;
 
 public class NoArvoreBinInteiro {
-    private int data;
-    private NoArvoreBinInteiro left, right;
+     int data;
+     NoArvoreBinInteiro left, right;
 
-    public NoArvoreBinInteiro(int newdata) {
-        this.data = newdata;
+    public NoArvoreBinInteiro(int data) {
+        this.data = data;
         this.left = null;
         this.right = null;
-
     }
 
     public int getData() {

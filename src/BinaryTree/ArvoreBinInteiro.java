@@ -5,39 +5,43 @@ public class ArvoreBinInteiro{
     public ArvoreBinInteiro() {
         this.root = null;
     }
+
     public NoArvoreBinInteiro getRoot() {
         return root;
     }
-    public void inserir(int data){
-        NoArvoreBinInteiro newNode = new NoArvoreBinInteiro(data);
-            if(root == null){
-                this.root = newNode;
+    public void inserir(int value) {
+        NoArvoreBinInteiro newNode = new NoArvoreBinInteiro(value);
+
+        if(root == null){
+            root = newNode;
         }else{
-            NoArvoreBinInteiro currentNode = this.root;
+            NoArvoreBinInteiro currentNode = root;
             while (true){
-                if(newNode.getData() < currentNode.getData()){
-                    if (currentNode.getLeft() != null){
-                        currentNode = currentNode.getLeft();
+                if(newNode.data < currentNode.data){
+                    if(currentNode.left != null){
+                        currentNode = currentNode.left;
                     } else {
                         currentNode.setLeft(newNode);
                         break;
                     }
-                }else{
-                    if (currentNode.getRight() != null){
-                        currentNode = currentNode.getRight();
-                    } else {
+                }else {
+                    if (currentNode.right != null){
+                        currentNode = currentNode.right;
+                    }else {
                         currentNode.setRight(newNode);
                         break;
                     }
                 }
+
             }
         }
+
     }
     public void preOrdem(NoArvoreBinInteiro curentNode) {
         if (curentNode != null) {
             System.out.println(curentNode.getData());
             preOrdem(curentNode.getLeft());
-            preOrdem(curentNode.getLeft());
+            preOrdem(curentNode.getRight());
         }
     }
     public void posOrdem(NoArvoreBinInteiro currentNode) {
@@ -56,17 +60,7 @@ public class ArvoreBinInteiro{
     }
 
     public int higherNumber(NoArvoreBinInteiro currentnode) {
-
-        if(isEmpty()){
-            System.out.println("A árvore está vazia.");
-            return 0;
-        }
-            int higher;
-            int lhigher = higherNumber(currentnode.getLeft());
-            int rhigher = higherNumber(currentnode.getRight());
-
-            higher = Math.max(lhigher, rhigher);
-            return higher;
+        return currentnode.right != null ? higherNumber(currentnode.right) : currentnode.data;
     }
 
     public int deepestLevel(NoArvoreBinInteiro currentnode) {
@@ -84,7 +78,6 @@ public class ArvoreBinInteiro{
     public boolean isEmpty (){
         return root == null;
     }
-
 
 }
 
