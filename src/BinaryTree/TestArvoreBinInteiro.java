@@ -37,25 +37,30 @@ public class TestArvoreBinInteiro {
                     System.out.println("O maior número é: " + tree.higherNumber(tree.root) );
                     break;
                 case 3:
-                    System.out.println("O menor número é: ");
+                    System.out.println("O menor número é: " + tree.smallestNumber(tree.root));
                     break;
                 case 4:
-                    System.out.println("A altura da árvore é: " + tree.deepestLevel(tree.root));
+                    System.out.println("A altura da árvore é: " + tree.height(tree.root));
                     break;
                 case 5:
-                    System.out.println("Lista números em pré-ordem: ");
+                    System.out.println("Lista de números em pré-ordem: ");
+                    tree.preOrdem(tree.root);
                     break;
                 case 6:
-                    System.out.println("Lista números em pós-ordem: ");
+                    System.out.println("Lista de números em pós-ordem: ");
+                    tree.posOrdem(tree.root);
                     break;
                 case 7:
-                    System.out.println("Lista de números em ordem simpétrica: ");
+                    System.out.println("Lista de números em ordem simétrica: ");
+                    tree.simetrico(tree.root);
                     break;
                 case 8:
-                    System.out.println("Lista de números em nível: ");
+                    System.out.println("Lista de números do percursso em nível: ");
+                    tree.levelOrder();
                     break;
                 case 9:
                     System.out.println("Lista dos números internos: ");
+                    tree.simetrico(tree.root);
                     break;
                 case 10:
                     System.out.println("Lista de folhas da árvore: ");
@@ -64,7 +69,7 @@ public class TestArvoreBinInteiro {
                     System.out.println("Caminho até o número: ");
                     break;
                 case 12:
-                    System.out.println("Raiz: " + tree.getRoot().getData());
+                    System.out.println("a raiz é: " + tree.getRoot().getData());
                 case 0:
                     break;
             }

@@ -9,27 +9,12 @@ public class NoArvoreBinInteiro {
         this.left = null;
         this.right = null;
     }
-
     public int getData() {
         return data;
     }
-
-    public void setData(int data) {
-        this.data = data;
-    }
-
-    public NoArvoreBinInteiro getLeft() {
-        return left;
-    }
-
     public void setLeft(NoArvoreBinInteiro left) {
         this.left = left;
     }
-
-    public NoArvoreBinInteiro getRight() {
-        return right;
-    }
-
     public void setRight(NoArvoreBinInteiro right) {
         this.right = right;
     }
