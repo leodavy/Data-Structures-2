@@ -64,6 +64,7 @@ public class TestArvoreBinInteiro {
                     break;
                 case 10:
                     System.out.println("Lista de folhas da árvore: ");
+                    tree.simetrico(tree.root);
                     break;
                 case 11:
                     System.out.println("Caminho até o número: ");

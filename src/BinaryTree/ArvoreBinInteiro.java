@@ -1,9 +1,6 @@
 package BinaryTree;
-
-
 import java.util.LinkedList;
 import java.util.Queue;
-
 public class ArvoreBinInteiro{
     public NoArvoreBinInteiro root;
     public ArvoreBinInteiro() {
@@ -84,10 +81,12 @@ public class ArvoreBinInteiro{
             if(currentNode.right != null) level.add(currentNode.right);
         }
     }
-    public boolean isEmpty (){
+    public boolean isEmpty () {
         return root == null;
     }
 }
+
+
 
 
 
