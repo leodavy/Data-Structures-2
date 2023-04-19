@@ -1,6 +1,7 @@
 package BinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
+
 public class ArvoreBinInteiro{
     public NoArvoreBinInteiro root;
     public ArvoreBinInteiro() {
