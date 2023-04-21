@@ -1,0 +1,2 @@
+public class PosicaoArvoreBin<T> {
+}
