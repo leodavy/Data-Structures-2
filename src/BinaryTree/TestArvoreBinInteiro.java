@@ -60,17 +60,20 @@ public class TestArvoreBinInteiro {
                     break;
                 case 9:
                     System.out.println("Lista dos números internos: ");
-                    tree.simetrico(tree.root);
+                    tree.internalNodes();
                     break;
                 case 10:
                     System.out.println("Lista de folhas da árvore: ");
-                    tree.simetrico(tree.root);
+                    tree.leafNodes(tree.root);
                     break;
                 case 11:
-                    System.out.println("Caminho até o número: ");
+                    System.out.println("Digite o caminho a ser exibido: ");
+                    int searchNumber = scanner.nextInt();
+                    System.out.println("O caminho da raíz ao número é: ");
+                    tree.findNumber(tree.root,searchNumber);
                     break;
                 case 12:
-                    System.out.println("a raiz é: " + tree.getRoot().getData());
+                    System.out.println("A raiz é: " + tree.getRoot().getData());
                 case 0:
                     break;
             }

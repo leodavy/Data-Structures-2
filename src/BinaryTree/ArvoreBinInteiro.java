@@ -1,6 +1,8 @@
 package BinaryTree;
+
 import java.util.LinkedList;
 import java.util.Queue;
+
 
 public class ArvoreBinInteiro{
     public NoArvoreBinInteiro root;
@@ -81,6 +83,40 @@ public class ArvoreBinInteiro{
             if(currentNode.left != null) level.add(currentNode.left);
             if(currentNode.right != null) level.add(currentNode.right);
         }
+    }
+    public void internalNodes(){
+        Queue<NoArvoreBinInteiro>queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            NoArvoreBinInteiro currentNode = queue.peek();
+            queue.remove();
+            boolean internal = false;
+            if(currentNode.left != null){
+                internal = true;
+                queue.add(currentNode.left);
+            }
+            if(currentNode.right != null){
+                internal= true;
+                queue.add(currentNode.right);
+            }
+            if(internal){
+                System.out.println(currentNode.data + " ");
+            }
+        }
+    }
+    public void leafNodes(NoArvoreBinInteiro currentNode){
+        if(currentNode.left == null && currentNode.right == null) System.out.println(currentNode.data + " ");
+        if(currentNode.left != null) leafNodes(currentNode.left);
+        if(currentNode.right != null) leafNodes(currentNode.right);
+    }
+    public boolean findNumber(NoArvoreBinInteiro currentNode,int targetNumber) {
+        if(currentNode == null) return false;
+        if(currentNode.data == targetNumber) return true;
+        if(findNumber(currentNode.left,targetNumber) || findNumber(currentNode.right,targetNumber)){
+            System.out.println(currentNode.data + " ");
+            return true;
+        }
+        return false;
     }
     public boolean isEmpty () {
         return root == null;
