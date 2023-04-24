@@ -1,10 +1,14 @@
 public class Posicao<E> {
-    E elemento;
-    Posicao<E> left,right;
 
-    public Posicao(E elemento) {
+    private E elemento;
+    private Posicao<E> pai;
+
+    public Posicao(E elemento, Posicao<E> pai) {
         this.elemento = elemento;
-    }public E getElemento() {
+        this.pai = pai;
+    }
+
+    public E getElemento() {
         return elemento;
     }
 
@@ -12,19 +16,12 @@ public class Posicao<E> {
         this.elemento = elemento;
     }
 
-    public Posicao<E> getLeft() {
-        return left;
+    public Posicao<E> getPai() {
+        return pai;
     }
 
-    public void setLeft(Posicao<E> left) {
-        this.left = left;
+    public void setPai(Posicao<E> pai) {
+        this.pai = pai;
     }
 
-    public Posicao<E> getRight() {
-        return right;
-    }
-
-    public void setRight(Posicao<E> right) {
-        this.right = right;
-    }
 }
