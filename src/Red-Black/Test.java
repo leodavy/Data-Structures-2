@@ -8,6 +8,7 @@ public class Test {
         redBlackTree.insert(3);
         redBlackTree.insert(7);
         redBlackTree.insert(20);
+        redBlackTree.remove(3);
 
         System.out.println("Pré-Ordem: ");
         redBlackTree.preOrder();

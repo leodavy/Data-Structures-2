@@ -4,6 +4,7 @@ public class Node {
     boolean color;
     Node(int data){
         this.data = data;
-        this.color = Tree.red;
+        this.color = Tree.RED;
+
     }
 }
